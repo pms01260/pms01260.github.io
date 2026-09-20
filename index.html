@@ -3,247 +3,91 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="박민선 — 변화하는 환경에서도 신뢰할 수 있는 컴퓨터 비전 시스템을 연구합니다.">
-  <meta name="theme-color" content="#f4f0e7">
-  <meta property="og:title" content="Minseon Park — AI Researcher">
+  <meta name="description" content="박민선 — Computer Vision, Test-Time Adaptation, Robust AI 연구자">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:title" content="Minseon Park | AI Researcher">
   <meta property="og:description" content="Computer Vision · Test-Time Adaptation · Source-Free Domain Adaptation">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/profile.png">
-  <title>Minseon Park — AI Researcher</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%232557e0%22/><text x=%2250%22 y=%2267%22 text-anchor=%22middle%22 font-size=%2252%22 fill=%22white%22>MP</text></svg>">
+  <title>Minseon Park | AI Researcher</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2218%22 fill=%22%234356d8%22/><text x=%2250%22 y=%2265%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-weight=%22700%22 font-size=%2244%22 fill=%22white%22>MP</text></svg>">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">본문으로 바로가기</a>
-  <div class="progress" aria-hidden="true"><span></span></div>
-
   <header class="site-header">
-    <a class="brand" href="#top" aria-label="홈으로">
-      <span class="brand-mark">MP</span>
-      <span>Minseon Park</span>
-    </a>
-    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
-      <span></span><span></span><span></span><span class="sr-only">메뉴 열기</span>
-    </button>
-    <nav id="site-nav" class="site-nav" aria-label="주요 메뉴">
-      <a href="#research">Research</a>
-      <a href="#experience">Experience</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <a class="header-cta" href="assets/CV_MinseonPark.pdf" download>CV <span>↓</span></a>
+    <div class="nav-wrap">
+      <a class="site-name" href="#home">Minseon Park</a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span><b class="sr-only">메뉴 열기</b></button>
+      <nav id="site-nav" aria-label="주요 메뉴">
+        <a href="#home">HOME</a><a href="#publications">PUBLICATIONS</a><a href="#experience">EXPERIENCE</a><a href="#awards">AWARDS</a><a href="assets/CV_MinseonPark.pdf" target="_blank">CV</a>
+      </nav>
+    </div>
   </header>
 
   <main id="main">
-    <section class="hero" id="top">
-      <div class="hero-copy reveal">
-        <p class="eyebrow"><span class="status-dot"></span> AI Researcher · Suwon, KR</p>
-        <h1>변화하는 환경에도<br><em>흔들리지 않는</em><br>시각 지능을 만듭니다.</h1>
-        <p class="hero-intro">안녕하세요, 컴퓨터 비전을 연구하는 <strong>박민선</strong>입니다. 학습 데이터가 없는 새로운 환경에서도 모델이 스스로 적응하고, 신뢰할 수 있는 판단을 이어가는 방법을 연구합니다.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#research">연구 살펴보기 <span>↘</span></a>
-          <a class="button button-ghost" href="mailto:pms01260@gmail.com">이메일 보내기 <span>↗</span></a>
-        </div>
-        <dl class="hero-stats" aria-label="주요 성과">
-          <div><dt>5</dt><dd>Publications</dd></div>
-          <div><dt>4.5</dt><dd>Master's GPA</dd></div>
-          <div><dt>2</dt><dd>Major Awards</dd></div>
-        </dl>
-      </div>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-pattern" aria-hidden="true"></div>
+      <div class="content-width"><p>RESEARCH IN</p><h1 id="hero-title">Computer Vision<br><span>&amp; Robust AI</span></h1></div>
+    </section>
 
-      <div class="hero-visual reveal" data-delay="1">
-        <div class="portrait-frame">
-          <div class="portrait-grid" aria-hidden="true"></div>
-          <img src="assets/profile.png" alt="박민선의 GitHub 프로필 그래픽" width="420" height="420">
-          <span class="portrait-tag tag-one">Computer Vision</span>
-          <span class="portrait-tag tag-two">Robust AI</span>
-          <span class="portrait-index">01 / RESEARCHER</span>
+    <section class="intro content-width" id="home">
+      <div class="profile-mark"><img src="assets/profile.png" alt="박민선의 GitHub 프로필 그래픽" width="420" height="420"></div>
+      <div class="intro-body">
+        <p class="hello">안녕하세요,</p>
+        <h2>박민선 <span>| Minseon Park</span></h2>
+        <p class="lead">변화하는 실제 환경에서도 신뢰할 수 있는 컴퓨터 비전 시스템을 연구합니다.</p>
+        <p>성균관대학교 전자전기컴퓨터공학과 석사과정에서 <strong>Test-Time Adaptation</strong>과 <strong>Source-Free Domain Adaptation</strong>을 중심으로 모델 강건성을 연구하고 있습니다. 학습 데이터에 다시 접근하기 어려운 상황에서도 모델이 새로운 환경에 적응하는 방법에 관심이 있습니다.</p>
+        <div class="quick-links" aria-label="연락처 및 외부 링크">
+          <a href="mailto:pms01260@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3zM3 6l9 7 9-7"/></svg>Email</a>
+          <a href="https://github.com/pms01260" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.87c-2.78.6-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.64-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.6 9.6 0 0 1 12 6.82a9.6 9.6 0 0 1 2.5.34c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.77c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>GitHub</a>
+          <a href="assets/CV_MinseonPark.pdf" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h8l4 4v16H6zM14 2v5h5M9 13h6M9 17h6"/></svg>CV</a>
         </div>
-        <div class="hero-note">
-          <span>Current focus</span>
-          <strong>Test-time<br>adaptation</strong>
-          <svg viewBox="0 0 58 58" aria-hidden="true"><path d="M8 48 48 8M21 8h27v27"/></svg>
+        <div class="intro-grid">
+          <div><h3>Education</h3><dl>
+            <div><dt>2025.03 — 2027.02</dt><dd><strong>성균관대학교</strong><br>전자전기컴퓨터공학과 석사 · GPA 4.5 / 4.5</dd></div>
+            <div><dt>2021.03 — 2025.02</dt><dd><strong>아주대학교</strong><br>전자공학과 학사 · GPA 4.13 / 4.5</dd></div>
+          </dl></div>
+          <div><h3>Research Interests</h3><ul class="interest-list"><li>Test-Time Adaptation</li><li>Source-Free Domain Adaptation</li><li>Vision-Language Models</li><li>Robust Computer Vision</li></ul></div>
         </div>
       </div>
     </section>
 
-    <div class="ticker" aria-hidden="true">
-      <div>
-        <span>COMPUTER VISION</span><i>✦</i><span>TEST-TIME ADAPTATION</span><i>✦</i><span>ROBUST AI</span><i>✦</i><span>DOMAIN ADAPTATION</span><i>✦</i>
-        <span>COMPUTER VISION</span><i>✦</i><span>TEST-TIME ADAPTATION</span><i>✦</i><span>ROBUST AI</span><i>✦</i><span>DOMAIN ADAPTATION</span><i>✦</i>
-      </div>
-    </div>
-
-    <section class="section research" id="research">
-      <header class="section-head reveal">
-        <p class="section-kicker">01 / Selected Research</p>
-        <h2>현실의 변화를<br>견디는 모델을 연구합니다.</h2>
-        <p>분포 변화, 손상된 입력, 제한된 연산 자원. 실제 환경에서 마주하는 조건을 연구 문제로 바꾸고 성능 개선을 수치로 검증합니다.</p>
-      </header>
-
-      <article class="featured-paper reveal">
-        <div class="paper-meta">
-          <span class="paper-number">01</span>
-          <span class="chip chip-lime">Under review · ACCV 2026</span>
-        </div>
-        <div class="paper-copy">
-          <p class="paper-label">Featured research</p>
-          <h3>Modality-Aware Cross-Modal Test-Time Adaptation</h3>
-          <p>이미지 노이즈와 질문 오타가 동시에 발생하는 VQA 환경을 정의하고, 시각 적응 <strong>GrayAnchor</strong>와 텍스트 복원 <strong>CrossSpell</strong>을 결합한 MAC-TTA를 제안했습니다.</p>
-          <ul class="tag-list" aria-label="연구 기술">
-            <li>Vision-Language Models</li><li>VQA</li><li>Test-Time Adaptation</li>
-          </ul>
-        </div>
-        <div class="result-panel" aria-label="정확도 개선 결과">
-          <p>Joint corruption accuracy</p>
-          <div class="score-row"><span>Corrupted</span><b>40.90%</b></div>
-          <div class="bar"><span style="--value:40.9%"></span></div>
-          <div class="score-row accent"><span>MAC-TTA</span><b>58.68%</b></div>
-          <div class="bar accent"><span style="--value:58.68%"></span></div>
-          <small>+17.78%p · 추가 학습 데이터 없이</small>
-        </div>
-      </article>
-
-      <div class="paper-grid">
-        <article class="paper-card reveal">
-          <div class="paper-card-top"><span>02</span><span class="chip">ICASSP 2026</span></div>
-          <h3>Source-Free Concept Bottleneck Model Adaptation</h3>
-          <p>CLIP 기반 하이브리드 증류와 신뢰도 적응형 조건부 앙상블로 설명 가능한 모델의 도메인 적응 성능을 개선했습니다.</p>
-          <div class="card-metric"><strong>32.38 → 76.61%</strong><span>Waterbirds-shift accuracy</span></div>
-          <a href="https://doi.org/10.1109/ICASSP55912.2026.11462298" target="_blank" rel="noreferrer">Paper / DOI <span>↗</span></a>
-        </article>
-
-        <article class="paper-card reveal" data-delay="1">
-          <div class="paper-card-top"><span>03</span><span class="chip">ICCE-Asia 2025</span></div>
-          <h3>Test-Time Training for Corruption Robustness</h3>
-          <p>양방향 특징 스캔, 학습 가능한 게이트, Mixup과 엔트로피 기반 순서 재배열로 손상 이미지 적응을 안정화했습니다.</p>
-          <div class="card-metric"><strong>74.64 → 79.90%</strong><span>CIFAR10-C Gaussian noise</span></div>
-          <a href="https://doi.org/10.1109/ICCE-Asia67487.2025.11263571" target="_blank" rel="noreferrer">Paper / DOI <span>↗</span></a>
-        </article>
-
-        <article class="paper-card reveal" data-delay="2">
-          <div class="paper-card-top"><span>04</span><span class="chip">ITC-CSCC 2025</span></div>
-          <h3>Efficient Optical Flow Refinement with Mamba</h3>
-          <p>ConvGRU 병목을 Mamba로 교체하고 다중 스케일 손실을 적용해 정확도와 계산 효율을 함께 개선했습니다.</p>
-          <div class="card-metric"><strong>−22.88% FLOPs</strong><span>with lower AEPE & F1-All</span></div>
-          <a href="https://doi.org/10.1109/ITC-CSCC66376.2025.11137675" target="_blank" rel="noreferrer">Paper / DOI <span>↗</span></a>
-        </article>
-
-        <article class="paper-card paper-card-image reveal">
-          <div class="card-image"><img src="assets/kcc-project.png" alt="흉부 X-ray 폐 결절 데이터 증강 연구 결과" loading="lazy"></div>
-          <div class="paper-card-top"><span>05</span><span class="chip">KCC 2024</span></div>
-          <h3>SAM-based Lung Nodule Augmentation</h3>
-          <p>SAM으로 실제 폐 결절을 분할·합성해 740장의 데이터를 생성하고, YOLOv8 검출 민감도를 개선했습니다.</p>
-          <div class="card-metric"><strong>86.47 → 92.01%</strong><span>Detection sensitivity</span></div>
-        </article>
+    <section class="section alternate" id="publications">
+      <div class="content-width section-inner">
+        <header class="section-title"><span class="section-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3h12v18H6zM9 7h6M9 11h6M9 15h4"/></svg></span><div><p>RESEARCH OUTPUT</p><h2>Publications</h2></div></header>
+        <ol class="publication-list">
+          <li><span class="pub-year">2026</span><div><h3>Modality-Aware Cross-Modal Test-Time Adaptation for Compact Generative Vision-Language Models</h3><p class="authors"><strong>Minseon Park</strong>, J. Shin</p><p class="venue">ACCV 2026 · Under Review</p><p class="description">시각 손상과 텍스트 손상이 동시에 발생하는 환경에서 MAC-TTA를 제안하고, 정확도를 40.90%에서 58.68%로 회복했습니다.</p><span class="label">VLM</span><span class="label">Test-Time Adaptation</span></div></li>
+          <li><span class="pub-year">2026</span><div><h3>Source-Free Concept Bottleneck Model Adaptation with Confidence-Adaptive Conditional Ensemble</h3><p class="authors"><strong>Minseon Park</strong>, J. Shin</p><p class="venue">IEEE ICASSP 2026 · pp. 3036–3040</p><p class="description">CLIP 기반 하이브리드 증류와 조건부 앙상블을 통해 Waterbirds-shift 정확도를 32.38%에서 76.61%로 향상했습니다.</p><a class="paper-link" href="https://doi.org/10.1109/ICASSP55912.2026.11462298" target="_blank" rel="noreferrer">[Paper]</a> <span class="label">Concept Bottleneck</span></div></li>
+          <li><span class="pub-year">2025</span><div><h3>Enhancing Test-Time Training for Corruption Robustness in Image Classification</h3><p class="authors"><strong>Minseon Park</strong>, J. Bae, J. Shin</p><p class="venue">IEEE ICCE-Asia 2025 · pp. 476–480</p><p class="description">양방향 특징 스캔과 학습 가능한 게이트를 적용하여 CIFAR10-C Gaussian noise 정확도를 74.64%에서 79.90%로 개선했습니다.</p><a class="paper-link" href="https://doi.org/10.1109/ICCE-Asia67487.2025.11263571" target="_blank" rel="noreferrer">[Paper]</a> <span class="label">Corruption Robustness</span></div></li>
+          <li><span class="pub-year">2025</span><div><h3>Efficient Recurrent Optical Flow Refinement Using Mamba and Multi-Scale Loss</h3><p class="authors"><strong>Minseon Park</strong>, J. Shin</p><p class="venue">IEEE ITC-CSCC 2025 · pp. 1205–1208</p><p class="description">ConvGRU 병목을 Mamba로 교체해 KITTI의 오차를 낮추면서 파라미터 32.65%, FLOPs 22.88%를 절감했습니다.</p><a class="paper-link" href="https://doi.org/10.1109/ITC-CSCC66376.2025.11137675" target="_blank" rel="noreferrer">[Paper]</a> <span class="label">Optical Flow</span></div></li>
+          <li><span class="pub-year">2024</span><div><h3>폐 결절 검출을 위한 SAM 기반 데이터 증강 기법</h3><p class="authors"><strong>박민선</strong>, 최현진, 유동연, 선주성, 이정원</p><p class="venue">한국컴퓨터종합학술대회 KCC 2024 · pp. 2245–2247</p><p class="description">실제 결절을 분할·합성한 740장의 학습 데이터를 구축하여 YOLOv8 검출 민감도를 86.47%에서 92.01%로 높였습니다.</p><span class="label">Medical AI</span><span class="label">SAM</span></div></li>
+        </ol>
       </div>
     </section>
 
-    <section class="section experience" id="experience">
-      <header class="section-head light reveal">
-        <p class="section-kicker">02 / Experience</p>
-        <h2>연구에서 현장까지,<br>문제를 끝까지 좁혀갑니다.</h2>
-      </header>
-
-      <div class="timeline">
-        <article class="timeline-item reveal">
-          <div class="timeline-date">2025.03 — 2027.02</div>
-          <div class="timeline-mark"><span></span></div>
-          <div class="timeline-copy">
-            <p>Media System Lab · Sungkyunkwan University</p>
-            <h3>M.S. Researcher</h3>
-            <p>Source-Free / Test-Time Adaptation을 중심으로 동적 환경에서의 모델 강건성을 연구합니다. 삼성서울병원과의 공동 프로젝트에도 참여했습니다.</p>
-            <ul><li>First-author international papers</li><li>Domain adaptation · Robust vision</li></ul>
-          </div>
-        </article>
-        <article class="timeline-item reveal">
-          <div class="timeline-date">2024.01 — 2024.06</div>
-          <div class="timeline-mark"><span></span></div>
-          <div class="timeline-copy">
-            <p>Embedded Software Lab · Ajou University</p>
-            <h3>Research Intern</h3>
-            <p>ITRC 연구 과제에서 흉부 X-ray 기반 폐 결절 검출과 의료 영상 데이터 증강을 연구했습니다.</p>
-            <ul><li>SAM fine-tuning</li><li>Medical image detection</li></ul>
-          </div>
-        </article>
-        <article class="timeline-item reveal">
-          <div class="timeline-date">2025.07 — 2025.09</div>
-          <div class="timeline-mark"><span></span></div>
-          <div class="timeline-copy">
-            <p>AI Champion Competition · DeepMood</p>
-            <h3>Vision Model Developer</h3>
-            <p>망막 바이오마커 기반 우울증 예측 모델을 개발하고, 촬영 기기 차이를 줄이는 전처리와 구조 실험으로 AUC를 높였습니다.</p>
-            <ul><li>AUC 62.73 → 69.52%</li><li>Clinical collaboration</li></ul>
-          </div>
-        </article>
+    <section class="section" id="experience"><div class="content-width section-inner">
+      <header class="section-title"><span class="section-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h16v13H4zM9 7V4h6v3M4 12h16M10 12v2h4v-2"/></svg></span><div><p>RESEARCH &amp; PROJECTS</p><h2>Experience</h2></div></header>
+      <div class="experience-list">
+        <article><div class="period">2025.03 — Present</div><div><h3>M.S. Researcher <span>· Media System Lab, SKKU</span></h3><p>Source-Free 및 Test-Time Adaptation을 중심으로 동적 환경에서의 모델 강건성을 연구합니다. 성균관대학교–삼성서울병원 공동 프로젝트에 참여하고 있습니다.</p></div></article>
+        <article><div class="period">2025.07 — 2025.09</div><div><h3>AI Champion Competition <span>· Team DeepMood</span></h3><p>망막 바이오마커 기반 우울증 예측 모델을 개발하고 전처리 및 구조 실험을 통해 FPRM 데이터셋 AUC를 62.73%에서 69.52%로 향상했습니다.</p></div></article>
+        <article><div class="period">2024.01 — 2024.06</div><div><h3>Research Intern <span>· Embedded Software Lab, Ajou University</span></h3><p>ITRC 연구 과제에서 흉부 X-ray 기반 폐 결절 검출과 의료 영상 데이터 증강을 연구했습니다.</p></div></article>
+        <article><div class="period">2023.07 — 2023.08</div><div><h3>AI Education Mentor <span>· NAVER Connect Foundation</span></h3><p>초등학생 10명을 대상으로 데이터 편향과 AI 윤리를 다루는 8차시 언플러그드 수업을 설계하고 진행했습니다.</p></div></article>
       </div>
-    </section>
+    </div></section>
 
-    <section class="section about" id="about">
-      <header class="section-head reveal">
-        <p class="section-kicker">03 / Beyond Research</p>
-        <h2>좋은 기술은<br>설명될 수 있어야 합니다.</h2>
-        <p>연구 결과를 만드는 것에서 멈추지 않고, 서로 다른 배경을 가진 사람들과 나누고 함께 작동하게 만드는 과정에 관심이 있습니다.</p>
-      </header>
+    <section class="section alternate" id="awards"><div class="content-width section-inner">
+      <header class="section-title"><span class="section-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 3h8v6a4 4 0 0 1-8 0zM8 5H4v2a4 4 0 0 0 4 4M16 5h4v2a4 4 0 0 1-4 4M12 13v5M8 21h8M9 18h6"/></svg></span><div><p>RECOGNITION</p><h2>Awards &amp; Scholarships</h2></div></header>
+      <div class="two-columns">
+        <div><h3 class="subheading">Awards</h3><ul class="simple-list"><li><span>2024</span><div><strong>대상</strong><br>아주대학교 전자공학과 산학박람회</div></li><li><span>2023</span><div><strong>모라이상</strong><br>가상환경 기반 자율주행 경진대회</div></li></ul></div>
+        <div><h3 class="subheading">Scholarships</h3><ul class="simple-list compact"><li><span>2026</span><div>이공계 석사 우수장학금 · 한국장학재단</div></li><li><span>2024</span><div>원천장학 · 아주대학교</div></li><li><span>2024</span><div>유정장학 · 유정장학회</div></li><li><span>2023</span><div>김용득장학 · 아주대학교</div></li><li><span>2022</span><div>유정장학 · 유정장학회</div></li><li><span>2021</span><div>AL장학 · 다산학부대학</div></li></ul></div>
+      </div>
+    </div></section>
 
-      <div class="about-grid">
-        <article class="about-card cobalt reveal">
-          <span class="about-icon">01</span>
-          <p class="about-type">Award</p>
-          <h3>아주대학교 전자공학과<br>산학박람회 대상</h3>
-          <p>폐 결절 데이터 증강 연구의 문제 정의부터 검증까지 비전공 청중의 언어로 전달했습니다.</p>
-          <small>2024</small>
-        </article>
-        <article class="about-card lime reveal" data-delay="1">
-          <span class="about-icon">02</span>
-          <p class="about-type">Mentoring</p>
-          <h3>소프트웨어야 놀자<br>대학생 멘토</h3>
-          <p>초등학생 10명을 위한 8차시 언플러그드 AI 수업을 설계하고 진행했습니다.</p>
-          <small>NAVER Connect Foundation · 2023</small>
-        </article>
-        <article class="about-card coral reveal" data-delay="2">
-          <span class="about-icon">03</span>
-          <p class="about-type">Competition</p>
-          <h3>가상환경 기반<br>자율주행 모라이상</h3>
-          <p>ROS 환경에서 차선 인식·경로 매핑·장애물 인지를 구현하고 통합 문제를 해결했습니다.</p>
-          <small>2023</small>
-        </article>
-      </div>
-
-      <div class="credentials reveal">
-        <div>
-          <p class="section-kicker">Education</p>
-          <article><span>2025 — 2027</span><h3>성균관대학교</h3><p>전자전기컴퓨터공학과 석사 · GPA 4.5 / 4.5</p></article>
-          <article><span>2021 — 2025</span><h3>아주대학교</h3><p>전자공학과 학사 · GPA 4.13 / 4.5</p></article>
-        </div>
-        <div>
-          <p class="section-kicker">Toolkit</p>
-          <ul class="skills">
-            <li>Python</li><li>PyTorch</li><li>Computer Vision</li><li>Test-Time Adaptation</li><li>Domain Adaptation</li><li>Vision-Language Models</li><li>C</li><li>Research Communication</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact" id="contact">
-      <div class="contact-copy reveal">
-        <p class="section-kicker">04 / Contact</p>
-        <h2>함께 풀고 싶은<br>문제가 있나요?</h2>
-        <p>연구 협업, 새로운 기회, 또는 흥미로운 컴퓨터 비전 문제에 관한 대화를 환영합니다.</p>
-      </div>
-      <div class="contact-links reveal" data-delay="1">
-        <a href="mailto:pms01260@gmail.com"><span>Email</span><strong>pms01260@gmail.com</strong><i>↗</i></a>
-        <a href="https://github.com/pms01260" target="_blank" rel="noreferrer"><span>GitHub</span><strong>@pms01260</strong><i>↗</i></a>
-        <a href="assets/CV_MinseonPark.pdf" download><span>Curriculum Vitae</span><strong>Download PDF</strong><i>↓</i></a>
-      </div>
-    </section>
+    <section class="contact-strip"><div class="content-width"><div><p>GET IN TOUCH</p><h2>연구 협업과 새로운 기회에 열려 있습니다.</h2></div><a href="mailto:pms01260@gmail.com">pms01260@gmail.com <span>↗</span></a></div></section>
   </main>
 
-  <footer>
-    <a class="brand" href="#top"><span class="brand-mark">MP</span><span>Minseon Park</span></a>
-    <p>Designed around research, built for the web.</p>
-    <p>© <span id="year">2026</span> Minseon Park</p>
-  </footer>
+  <footer><div class="content-width"><p>© <span id="year">2026</span> Minseon Park. All rights reserved.</p><div><a href="https://github.com/pms01260" target="_blank" rel="noreferrer">GitHub</a><span>·</span><a href="#home">Back to top</a></div></div></footer>
 </body>
 </html>
