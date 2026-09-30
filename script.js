@@ -45,7 +45,7 @@ const progress = document.querySelector('.side-track span');
 let progressQueued = false;
 function updateProgress() {
   const max = document.documentElement.scrollHeight - innerHeight;
-  progress.style.transform = `scaleY(${max > 0 ? Math.min(scrollY / max, 1) : 0})`;
+  progress.style.height = `${max > 0 ? Math.min(scrollY / max, 1) * 100 : 0}%`;
   progressQueued = false;
 }
 addEventListener('scroll', () => {
