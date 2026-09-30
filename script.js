@@ -20,40 +20,22 @@ const observer = new IntersectionObserver((entries) => {
 }, { rootMargin: '-30% 0px -60%', threshold: 0 });
 
 document.querySelectorAll('main section[id]').forEach((section) => observer.observe(section));
-const peek = document.querySelector('.n-peek');
-const peekPage = peek?.querySelector('.n-page');
-const peekScroll = peek?.querySelector('.n-peek-scroll');
-const peekBack = peek?.querySelector('.n-peek-back');
-const pageHistory = [];
+const dialog = document.querySelector('.activity-dialog');
+const dialogTitle = dialog?.querySelector('h2');
+const dialogBody = dialog?.querySelector('.dialog-body');
 
-function showPage(name, { push = true } = {}) {
-  const template = document.getElementById(`notion-${name}`);
-  if (!peek || !template) return;
-  if (push && peek.open && peek.dataset.page) pageHistory.push(peek.dataset.page);
-  peek.dataset.page = name;
-  peek.setAttribute('aria-label', template.dataset.title);
-  peekPage.replaceChildren(template.content.cloneNode(true));
-  peekScroll.scrollTop = 0;
-  peekBack.hidden = pageHistory.length === 0;
-  if (!peek.open) {
-    peek.showModal();
-    document.body.classList.add('modal-open');
-  }
-}
+document.querySelectorAll('.activity-card').forEach((card) => card.addEventListener('click', () => {
+  const template = document.getElementById(`activity-${card.dataset.activity}`);
+  if (!dialog || !template) return;
+  dialogTitle.textContent = card.querySelector('strong').textContent;
+  dialogBody.replaceChildren(template.content.cloneNode(true));
+  dialogBody.scrollTop = 0;
+  dialog.showModal();
+  document.body.classList.add('modal-open');
+}));
 
-document.addEventListener('click', (event) => {
-  const trigger = event.target.closest('[data-page]');
-  if (trigger) showPage(trigger.dataset.page);
-});
-
-peekBack?.addEventListener('click', () => { if (pageHistory.length) showPage(pageHistory.pop(), { push: false }); });
-peek?.querySelector('.n-peek-close').addEventListener('click', () => peek.close());
-peek?.addEventListener('click', (event) => { if (event.target === peek) peek.close(); });
-peek?.addEventListener('close', () => {
-  document.body.classList.remove('modal-open');
-  peekPage.replaceChildren();
-  peek.dataset.page = '';
-  pageHistory.length = 0;
-});
+dialog?.querySelector('.dialog-close').addEventListener('click', () => dialog.close());
+dialog?.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
+dialog?.addEventListener('close', () => document.body.classList.remove('modal-open'));
 
 document.getElementById('year').textContent = new Date().getFullYear();
