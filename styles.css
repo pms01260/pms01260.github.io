@@ -91,6 +91,13 @@ dd strong { color:var(--ink); }
 .activity-card strong { margin:3px 0 4px; color:var(--ink); font-size:15px; line-height:1.45; }
 .activity-summary { font-size:12px; line-height:1.55; }
 
+.award-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.award-card img,.award-cover { aspect-ratio:4/3; }
+.award-cover { display:grid; place-items:center; width:100%; color:white; background:linear-gradient(135deg,#26378e,#4356d8 60%,#6f86ff); }
+.award-cover svg { width:56px; height:56px; fill:none; stroke:currentColor; stroke-width:1.4; stroke-linecap:round; stroke-linejoin:round; }
+.dialog-link { padding:7px 12px; color:var(--blue); background:none; border:1px solid #d7daf0; border-radius:3px; font:inherit; font-size:13px; font-weight:650; cursor:pointer; }
+.dialog-link:hover { color:white; background:var(--blue); border-color:var(--blue); }
+
 body.modal-open { overflow:hidden; }
 .activity-dialog { width:min(calc(100% - 32px),760px); max-height:min(88vh,900px); padding:0; color:var(--text); border:0; border-radius:6px; box-shadow:0 20px 50px rgba(16,22,44,.25); overflow:hidden; }
 .activity-dialog[open] { display:flex; flex-direction:column; }
