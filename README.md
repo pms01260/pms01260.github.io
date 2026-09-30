@@ -23,9 +23,12 @@ python3 -m http.server 8080
 
 - `index.html`: 전체 콘텐츠와 구조
 - `styles.css`: 학술 홈페이지 스타일의 반응형 디자인
-- `script.js`: 모바일 메뉴와 현재 섹션 표시
+- `script.js`: 모바일 메뉴, 현재 섹션 표시, 활동 상세 모달
 - `assets/CV_MinseonPark.pdf`: 다운로드용 영문 CV
 - `assets/profile.png`: GitHub 프로필 그래픽
 - `assets/kcc-project.png`: KCC 연구 대표 이미지
+- `assets/activities/`: 활동 카드와 상세 보기에 쓰는 이미지
 
 연락처, 논문, 프로젝트를 수정할 때는 `index.html`의 해당 문구만 변경하면 됩니다.
+
+활동을 추가하려면 `#activities` 섹션에 `data-activity="이름"`을 가진 카드를 넣고, 페이지 하단에 같은 이름의 `<template id="activity-이름">`으로 상세 내용을 작성합니다.

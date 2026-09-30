@@ -79,6 +79,40 @@ dd strong { color:var(--ink); }
 .experience-list h3 span { color:var(--blue); font-weight:500; }
 .experience-list p { margin:0; max-width:760px; font-size:13px; }
 
+.section-note { margin:-22px 0 28px; color:var(--muted); font-size:13px; }
+.activity-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+.activity-card { display:flex; flex-direction:column; padding:0 0 18px; color:var(--text); background:white; border:1px solid var(--line); border-radius:4px; text-align:left; font:inherit; cursor:pointer; overflow:hidden; transition:transform .15s,box-shadow .15s,border-color .15s; }
+.activity-card:hover,.activity-card:focus-visible { transform:translateY(-3px); border-color:#c9cdea; box-shadow:0 8px 20px rgba(16,22,44,.08); }
+.activity-card:focus-visible { outline:2px solid var(--blue); outline-offset:2px; }
+.activity-card img { width:100%; aspect-ratio:16/10; object-fit:cover; background:var(--soft); }
+.activity-card img.contain { object-fit:contain; background:#fbfbfd; }
+.activity-card>span,.activity-card>strong { padding:0 18px; }
+.activity-meta { margin-top:14px; color:var(--blue); font-size:11px; font-weight:650; }
+.activity-card strong { margin:3px 0 4px; color:var(--ink); font-size:15px; line-height:1.45; }
+.activity-summary { font-size:12px; line-height:1.55; }
+
+body.modal-open { overflow:hidden; }
+.activity-dialog { width:min(calc(100% - 32px),760px); max-height:min(88vh,900px); padding:0; color:var(--text); border:0; border-radius:6px; box-shadow:0 20px 50px rgba(16,22,44,.25); overflow:hidden; }
+.activity-dialog[open] { display:flex; flex-direction:column; }
+.activity-dialog::backdrop { background:rgba(20,24,38,.55); }
+.dialog-head { display:flex; align-items:flex-start; justify-content:space-between; gap:16px; padding:20px 26px 16px; border-bottom:1px solid var(--line); }
+.dialog-head h2 { margin:0; color:var(--ink); font-size:19px; line-height:1.4; }
+.dialog-close { flex:none; width:32px; height:32px; margin:-4px -8px 0 0; color:var(--muted); background:none; border:0; border-radius:4px; font-size:26px; line-height:1; cursor:pointer; }
+.dialog-close:hover { color:var(--ink); background:var(--soft); }
+.dialog-body { padding:6px 26px 28px; overflow-y:auto; }
+.dialog-body h3 { margin:26px 0 8px; padding-left:10px; color:var(--ink); border-left:3px solid var(--blue); font-size:15px; line-height:1.4; }
+.dialog-body p { margin:0 0 10px; font-size:14px; }
+.dialog-body ul { margin:0 0 10px; padding-left:20px; font-size:14px; }
+.dialog-body li::marker { color:var(--blue); }
+.dialog-body img { width:100%; margin:12px 0 14px; border:1px solid var(--line); border-radius:3px; }
+.dialog-body img.narrow { width:min(100%,360px); }
+.dialog-body code { padding:1px 5px; color:var(--blue-dark); background:#eef0f8; border-radius:3px; font-size:12.5px; }
+.activity-info { margin-top:14px !important; color:var(--muted); font-size:12px !important; }
+.activity-info strong { color:var(--blue); }
+.week-list { margin:0 0 10px; padding:0; list-style:none; font-size:14px; }
+.week-list li { display:grid; grid-template-columns:110px 1fr; gap:12px; padding:7px 0; border-bottom:1px solid var(--line); }
+.week-list span { color:var(--blue); font-size:12px; font-weight:650; }
+
 .two-columns { display:grid; grid-template-columns:1fr 1fr; gap:80px; }
 .subheading { margin:0 0 14px; padding-bottom:9px; color:var(--ink); border-bottom:2px solid var(--blue); font:700 18px Georgia,serif; }
 .simple-list { margin:0; padding:0; list-style:none; }
@@ -117,6 +151,9 @@ footer a:hover { color:white; }
   .section { padding:58px 0 64px; }
   .publication-list>li { grid-template-columns:1fr; gap:5px; }
   .experience-list article { grid-template-columns:1fr; gap:6px; }
+  .activity-grid { grid-template-columns:1fr 1fr; gap:16px; }
+  .dialog-head { padding:16px 18px 12px; }
+  .dialog-body { padding:4px 18px 22px; }
   .contact-strip .content-width { align-items:flex-start; flex-direction:column; }
   footer .content-width { flex-direction:column; gap:10px; text-align:center; }
 }
@@ -127,5 +164,7 @@ footer a:hover { color:white; }
   .intro h2 span { display:block; margin-top:3px; }
   .quick-links { flex-wrap:wrap; }
   dl>div { grid-template-columns:1fr; gap:2px; }
+  .activity-grid { grid-template-columns:1fr; }
+  .week-list li { grid-template-columns:1fr; gap:0; }
 }
-@media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+@media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .activity-card { transition:none; } }
