@@ -85,8 +85,8 @@ dd strong { color:var(--ink); }
 .experience-list { border-top:1px solid var(--line); }
 .experience-list article { display:grid; grid-template-columns:185px 1fr; gap:30px; padding:25px 0; border-bottom:1px solid var(--line); }
 .period { color:var(--muted); font-size:12px; }
-.experience-list h3 { margin:-3px 0 7px; color:var(--ink); font-size:16px; }
-.experience-list h3 span { color:var(--blue); font-weight:500; }
+.experience-list h3 { margin:-3px 0 7px; color:var(--ink); font-size:16px; font-weight:800; }
+.experience-list h3 span { color:var(--blue); font-weight:700; }
 .experience-list p { margin:0; max-width:760px; font-size:13px; }
 
 .section-note { margin:-22px 0 28px; color:var(--muted); font-size:13px; }
