@@ -40,4 +40,19 @@ dialog?.querySelector('.dialog-close').addEventListener('click', () => dialog.cl
 dialog?.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
 dialog?.addEventListener('close', () => document.body.classList.remove('modal-open'));
 
+const progress = document.querySelector('.scroll-progress span');
+let progressQueued = false;
+function updateProgress() {
+  const max = document.documentElement.scrollHeight - innerHeight;
+  progress.style.transform = `scaleY(${max > 0 ? Math.min(scrollY / max, 1) : 0})`;
+  progressQueued = false;
+}
+addEventListener('scroll', () => {
+  if (progressQueued) return;
+  progressQueued = true;
+  requestAnimationFrame(updateProgress);
+}, { passive: true });
+addEventListener('resize', updateProgress);
+updateProgress();
+
 document.getElementById('year').textContent = new Date().getFullYear();
