@@ -1,6 +1,7 @@
 const button = document.querySelector('.menu-button');
 const nav = document.querySelector('#site-nav');
 const links = [...document.querySelectorAll('#site-nav a[href^="#"]')];
+const sectionLinks = [...links, ...document.querySelectorAll('.side-nav a')];
 
 button?.addEventListener('click', () => {
   const open = nav.classList.toggle('open');
@@ -15,7 +16,7 @@ links.forEach((link) => link.addEventListener('click', () => {
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) return;
-    links.forEach((link) => link.classList.toggle('active', link.hash === `#${entry.target.id}`));
+    sectionLinks.forEach((link) => link.classList.toggle('active', link.hash === `#${entry.target.id}`));
   });
 }, { rootMargin: '-30% 0px -60%', threshold: 0 });
 
@@ -40,7 +41,7 @@ dialog?.querySelector('.dialog-close').addEventListener('click', () => dialog.cl
 dialog?.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
 dialog?.addEventListener('close', () => document.body.classList.remove('modal-open'));
 
-const progress = document.querySelector('.scroll-progress span');
+const progress = document.querySelector('.side-track span');
 let progressQueued = false;
 function updateProgress() {
   const max = document.documentElement.scrollHeight - innerHeight;
