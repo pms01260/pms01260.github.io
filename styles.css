@@ -91,10 +91,14 @@ dd strong { color:var(--ink); }
 .activity-card strong { margin:3px 0 4px; color:var(--ink); font-size:15px; line-height:1.45; }
 .activity-summary { font-size:12px; line-height:1.55; }
 
-.award-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+.awards-layout { display:grid; grid-template-columns:1.7fr 1fr; gap:56px; }
+.award-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+.award-card { padding-bottom:14px; }
+.award-card>span,.award-card>strong { padding:0 13px; }
+.award-card .activity-meta { margin-top:11px; font-size:10.5px; line-height:1.45; }
+.award-card strong { font-size:14px; }
+.award-card .activity-summary { font-size:11.5px; }
 .award-card img.top { object-position:center 12%; }
-.subheading.scholarship-heading { margin-top:48px; }
-.scholarship-list { display:grid; grid-template-columns:1fr 1fr; column-gap:60px; }
 .award-card img { aspect-ratio:4/3; }
 .dialog-link { padding:7px 12px; color:var(--blue); background:none; border:1px solid #d7daf0; border-radius:3px; font:inherit; font-size:13px; font-weight:650; cursor:pointer; }
 .dialog-link:hover { color:white; background:var(--blue); border-color:var(--blue); }
@@ -160,8 +164,7 @@ footer a:hover { color:white; }
   .publication-list>li { grid-template-columns:1fr; gap:5px; }
   .experience-list article { grid-template-columns:1fr; gap:6px; }
   .activity-grid { grid-template-columns:1fr 1fr; gap:16px; }
-  .award-grid { grid-template-columns:1fr 1fr; gap:16px; }
-  .scholarship-list { grid-template-columns:1fr; }
+  .awards-layout { grid-template-columns:1fr; gap:36px; }
   .dialog-head { padding:16px 18px 12px; }
   .dialog-body { padding:4px 18px 22px; }
   .contact-strip .content-width { align-items:flex-start; flex-direction:column; }
@@ -175,7 +178,7 @@ footer a:hover { color:white; }
   .quick-links { flex-wrap:wrap; }
   dl>div { grid-template-columns:1fr; gap:2px; }
   .activity-grid { grid-template-columns:1fr; }
-  .award-grid { grid-template-columns:1fr; }
+  .award-grid { grid-template-columns:1fr 1fr; }
   .week-list li { grid-template-columns:1fr; gap:0; }
 }
 @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .activity-card { transition:none; } }
