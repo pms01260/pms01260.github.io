@@ -141,6 +141,8 @@ body.modal-open { overflow:hidden; }
 .simple-list li { display:grid; grid-template-columns:52px 1fr; gap:14px; padding:12px 0; border-bottom:1px solid #dfe1e6; line-height:1.55; }
 .simple-list li>span { color:var(--blue); font-size:12px; font-weight:700; }
 .simple-list strong { color:var(--ink); }
+.list-link { padding:0; color:inherit; background:none; border:0; border-bottom:1px dashed #b9bfdc; font:inherit; text-align:left; cursor:pointer; }
+.list-link:hover { color:var(--blue); border-bottom-color:var(--blue); }
 .simple-list.compact li { padding:9px 0; font-size:13px; }
 
 .contact-strip { padding:52px 0; color:white; background:var(--blue); }

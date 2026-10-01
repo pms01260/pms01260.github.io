@@ -30,7 +30,7 @@ document.addEventListener('click', (event) => {
   const template = trigger && document.getElementById(`activity-${trigger.dataset.activity}`);
   if (!dialog || !template) return;
   const card = document.querySelector(`.activity-card[data-activity="${trigger.dataset.activity}"]`);
-  dialogTitle.textContent = card.querySelector('strong').textContent;
+  dialogTitle.textContent = card ? card.querySelector('strong').textContent : trigger.dataset.title;
   dialogBody.replaceChildren(template.content.cloneNode(true));
   dialogBody.scrollTop = 0;
   if (!dialog.open) dialog.showModal();
