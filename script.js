@@ -61,23 +61,35 @@ const deckSlide = deck?.querySelector('.deck-slide');
 const deckCounter = deck?.querySelector('.deck-counter');
 const deckPrev = deck?.querySelector('.deck-prev');
 const deckNext = deck?.querySelector('.deck-next');
-const deckCount = Number(deck?.dataset.count || 0);
-const slideSrc = (n) => `assets/portfolio/slide-${String(n).padStart(2, '0')}.jpg`;
+const deckView = deck?.querySelector('.deck-view');
+const decks = {
+  portfolio: { title: 'Portfolio', count: 27, src: (n) => `assets/portfolio/slide-${String(n).padStart(2, '0')}.jpg`, pdf: 'assets/portfolio/Portfolio_MinseonPark.pdf', ratio: '16/9' },
+  cv: { title: 'CV', count: 2, src: (n) => `assets/cv/page-${String(n).padStart(2, '0')}.jpg`, pdf: 'assets/CV_MinseonPark.pdf', ratio: '1400/1980', document: true },
+};
+let current = decks.portfolio;
 let deckPage = 1;
 
 function showSlide(n) {
-  deckPage = Math.min(Math.max(n, 1), deckCount);
-  deckSlide.src = slideSrc(deckPage);
-  deckSlide.alt = `포트폴리오 ${deckPage}쪽`;
-  deckCounter.textContent = `${deckPage} / ${deckCount}`;
+  deckPage = Math.min(Math.max(n, 1), current.count);
+  deckSlide.src = current.src(deckPage);
+  deckSlide.alt = `${current.title} ${deckPage}쪽`;
+  deckCounter.textContent = `${deckPage} / ${current.count}`;
   deckPrev.disabled = deckPage === 1;
-  deckNext.disabled = deckPage === deckCount;
-  if (deckPage < deckCount) new Image().src = slideSrc(deckPage + 1);
+  deckNext.disabled = deckPage === current.count;
+  deckView.scrollTop = 0;
+  if (deckPage < current.count) new Image().src = current.src(deckPage + 1);
 }
 
-document.querySelectorAll('[data-deck]').forEach((trigger) => trigger.addEventListener('click', () => {
+document.querySelectorAll('[data-deck]').forEach((trigger) => trigger.addEventListener('click', (event) => {
+  event.preventDefault();
   nav.classList.remove('open');
   button?.setAttribute('aria-expanded', 'false');
+  current = decks[trigger.dataset.deck];
+  deck.querySelector('h2').textContent = current.title;
+  deck.setAttribute('aria-label', current.title);
+  deck.querySelector('.deck-download').href = current.pdf;
+  deck.style.setProperty('--ratio', current.ratio);
+  deck.classList.toggle('is-document', Boolean(current.document));
   showSlide(1);
   deck.showModal();
   document.body.classList.add('modal-open');
