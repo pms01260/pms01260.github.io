@@ -45,8 +45,9 @@ nav a:hover,nav a.active { color:var(--blue); }
 .lead { margin:18px 0 8px; color:var(--ink); font-size:18px; font-weight:500; }
 .intro-body>p:not(.hello):not(.lead) { max-width:780px; margin:0; }
 .quick-links { display:flex; gap:10px; margin-top:24px; }
-.quick-links a { display:inline-flex; align-items:center; gap:6px; padding:5px 10px; color:var(--blue); border:1px solid #d7daf0; border-radius:3px; text-decoration:none; font-size:12px; font-weight:650; }
-.quick-links a:hover { color:white; background:var(--blue); border-color:var(--blue); }
+.quick-links a,.quick-links button { display:inline-flex; align-items:center; gap:6px; padding:5px 10px; color:var(--blue); border:1px solid #d7daf0; border-radius:3px; text-decoration:none; font-size:12px; font-weight:650; }
+.quick-links button { background:none; font:inherit; font-size:12px; font-weight:650; line-height:inherit; cursor:pointer; }
+.quick-links a:hover,.quick-links button:hover { color:white; background:var(--blue); border-color:var(--blue); }
 .quick-links svg { width:15px; height:15px; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
 .quick-links a:nth-child(2) svg { fill:currentColor; stroke:none; }
 .intro-grid { display:grid; grid-template-columns:1.35fr 1fr; gap:70px; margin-top:42px; padding-top:32px; border-top:1px solid var(--line); }
@@ -114,6 +115,24 @@ dd strong { color:var(--ink); }
 .dialog-link:hover { color:white; background:var(--blue); border-color:var(--blue); }
 
 body.modal-open { overflow:hidden; }
+.nav-button { padding:0; color:var(--ink); background:none; border:0; font:inherit; font-size:12px; font-weight:650; letter-spacing:.025em; cursor:pointer; }
+.nav-button:hover { color:var(--blue); }
+.deck-dialog { width:min(calc(100% - 32px),1100px,calc((100vh - 110px) * 16 / 9)); outline:none; max-height:none; padding:0; color:var(--text); background:#14182a; border:0; border-radius:8px; box-shadow:0 20px 50px rgba(0,0,0,.4); overflow:hidden; }
+.deck-dialog[open] { display:flex; flex-direction:column; }
+.deck-dialog::backdrop { background:rgba(10,12,22,.75); }
+.deck-head { display:flex; align-items:center; gap:14px; padding:12px 16px 12px 22px; color:white; }
+.deck-head h2 { margin:0; font-size:16px; }
+.deck-counter { color:rgba(255,255,255,.6); font-size:13px; font-variant-numeric:tabular-nums; }
+.deck-download { margin-left:auto; padding:5px 10px; color:white; border:1px solid rgba(255,255,255,.35); border-radius:3px; text-decoration:none; font-size:12px; }
+.deck-download:hover { color:#14182a; background:white; }
+.deck-head .deck-close { margin:0; color:rgba(255,255,255,.7); }
+.deck-head .deck-close:hover { color:white; background:rgba(255,255,255,.12); }
+.deck-stage { position:relative; background:white; touch-action:pan-y; user-select:none; }
+.deck-slide { width:100%; height:auto; aspect-ratio:16/9; background:#f4f5f7; }
+.deck-nav { position:absolute; top:50%; display:grid; place-items:center; width:44px; height:44px; padding:0 0 4px; color:white; background:rgba(20,24,42,.55); border:0; border-radius:50%; font-size:30px; line-height:1; transform:translateY(-50%); cursor:pointer; }
+.deck-nav:hover { background:var(--blue); }
+.deck-nav:disabled { opacity:0; pointer-events:none; }
+.deck-prev { left:12px; } .deck-next { right:12px; }
 .activity-dialog { width:min(calc(100% - 32px),760px); max-height:min(88vh,900px); padding:0; color:var(--text); border:0; border-radius:6px; box-shadow:0 20px 50px rgba(16,22,44,.25); overflow:hidden; }
 .activity-dialog[open] { display:flex; flex-direction:column; }
 .activity-dialog::backdrop { background:rgba(20,24,38,.55); }
@@ -178,6 +197,11 @@ footer a:hover { color:white; }
   .experience-list article { grid-template-columns:1fr; gap:6px; }
   .activity-grid { grid-template-columns:1fr 1fr; gap:16px; }
   .awards-layout { grid-template-columns:1fr; gap:36px; }
+  .nav-button { padding:10px 0; text-align:left; }
+  .deck-dialog { width:100%; }
+  .deck-head { gap:10px; padding:10px 10px 10px 14px; }
+  .deck-nav { width:34px; height:34px; font-size:24px; }
+  .deck-prev { left:6px; } .deck-next { right:6px; }
   .dialog-head { padding:16px 18px 12px; }
   .dialog-body { padding:4px 18px 22px; }
   .contact-strip .content-width { align-items:flex-start; flex-direction:column; }

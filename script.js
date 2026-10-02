@@ -56,4 +56,49 @@ addEventListener('scroll', () => {
 addEventListener('resize', updateProgress);
 updateProgress();
 
+const deck = document.querySelector('.deck-dialog');
+const deckSlide = deck?.querySelector('.deck-slide');
+const deckCounter = deck?.querySelector('.deck-counter');
+const deckPrev = deck?.querySelector('.deck-prev');
+const deckNext = deck?.querySelector('.deck-next');
+const deckCount = Number(deck?.dataset.count || 0);
+const slideSrc = (n) => `assets/portfolio/slide-${String(n).padStart(2, '0')}.jpg`;
+let deckPage = 1;
+
+function showSlide(n) {
+  deckPage = Math.min(Math.max(n, 1), deckCount);
+  deckSlide.src = slideSrc(deckPage);
+  deckSlide.alt = `포트폴리오 ${deckPage}쪽`;
+  deckCounter.textContent = `${deckPage} / ${deckCount}`;
+  deckPrev.disabled = deckPage === 1;
+  deckNext.disabled = deckPage === deckCount;
+  if (deckPage < deckCount) new Image().src = slideSrc(deckPage + 1);
+}
+
+document.querySelectorAll('[data-deck]').forEach((trigger) => trigger.addEventListener('click', () => {
+  nav.classList.remove('open');
+  button?.setAttribute('aria-expanded', 'false');
+  showSlide(1);
+  deck.showModal();
+  document.body.classList.add('modal-open');
+}));
+deckPrev?.addEventListener('click', () => showSlide(deckPage - 1));
+deckNext?.addEventListener('click', () => showSlide(deckPage + 1));
+deck?.querySelector('.deck-close').addEventListener('click', () => deck.close());
+deck?.addEventListener('click', (event) => { if (event.target === deck) deck.close(); });
+deck?.addEventListener('close', () => document.body.classList.remove('modal-open'));
+deck?.addEventListener('keydown', (event) => {
+  if (event.key === 'ArrowLeft') showSlide(deckPage - 1);
+  if (event.key === 'ArrowRight') showSlide(deckPage + 1);
+});
+let swipeX = null;
+deckSlide?.addEventListener('pointerdown', (event) => { swipeX = event.clientX; });
+deckSlide?.addEventListener('pointerup', (event) => {
+  if (swipeX === null) return;
+  const dx = event.clientX - swipeX;
+  swipeX = null;
+  if (Math.abs(dx) > 40) showSlide(deckPage + (dx < 0 ? 1 : -1));
+});
+deckSlide?.addEventListener('dragstart', (event) => event.preventDefault());
+
 document.getElementById('year').textContent = new Date().getFullYear();
