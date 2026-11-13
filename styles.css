@@ -163,6 +163,20 @@ body.modal-open { overflow:hidden; }
 .week-list { margin:0 0 10px; padding:0; list-style:none; font-size:14px; }
 .week-list li { display:grid; grid-template-columns:110px 1fr; gap:12px; padding:7px 0; border-bottom:1px solid var(--line); }
 .week-list span { color:var(--blue); font-size:12px; font-weight:650; }
+.material-note { color:var(--muted); font-size:13px !important; }
+.material-library { display:grid; gap:18px; margin:16px 0 4px; }
+.material-group { padding:15px; background:#f7f8fb; border:1px solid var(--line); border-radius:4px; }
+.dialog-body .material-group h4 { margin:0 0 11px; color:var(--ink); font-size:13px; }
+.material-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+.material-link { display:grid; grid-template-columns:39px minmax(0,1fr) 18px; gap:10px; align-items:center; min-height:58px; padding:8px 10px; color:var(--text); background:white; border:1px solid #e0e3eb; border-radius:3px; text-decoration:none; transition:border-color .15s,box-shadow .15s; }
+.material-link:hover,.material-link:focus-visible { border-color:#abb3e7; box-shadow:0 3px 10px rgba(31,42,105,.08); outline:none; }
+.file-type { display:grid; place-items:center; width:39px; height:39px; color:#4659d8; background:#edf0ff; border-radius:3px; font-size:9px; font-weight:800; letter-spacing:-.02em; }
+.file-type.hwp { color:#28756a; background:#e8f5f1; }
+.file-type.answer { color:#9a6124; background:#fbf0df; }
+.material-link>span:nth-child(2) { display:flex; min-width:0; flex-direction:column; line-height:1.35; }
+.material-link strong { overflow:hidden; color:var(--ink); font-size:12px; text-overflow:ellipsis; white-space:nowrap; }
+.material-link small { margin-top:2px; color:var(--muted); font-size:10px; }
+.material-link i { color:var(--blue); font-size:16px; font-style:normal; text-align:center; }
 
 .two-columns { display:grid; grid-template-columns:1fr 1fr; gap:80px; }
 .subheading { margin:0 0 14px; padding-bottom:9px; color:var(--ink); border-bottom:2px solid var(--blue); font-size:18px; font-weight:800; }
@@ -206,6 +220,7 @@ footer a:hover { color:white; }
   .section { padding:44px 0 50px; }
   .publication-list>li { grid-template-columns:1fr; gap:5px; }
   .experience-list article { grid-template-columns:1fr; gap:6px; }
+  .material-list { grid-template-columns:1fr; }
   .activity-grid { grid-template-columns:1fr 1fr; gap:16px; }
   .awards-layout { grid-template-columns:1fr; gap:36px; }
   .nav-button { padding:10px 0; text-align:left; }
