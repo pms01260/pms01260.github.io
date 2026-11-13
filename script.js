@@ -24,22 +24,68 @@ document.querySelectorAll('main section[id]').forEach((section) => observer.obse
 const dialog = document.querySelector('.activity-dialog');
 const dialogTitle = dialog?.querySelector('h2');
 const dialogBody = dialog?.querySelector('.dialog-body');
+let activeActivity = null;
+
+function openActivity(id, updateHash = false) {
+  const template = document.getElementById(`activity-${id}`);
+  if (!dialog || !template) return false;
+  const card = document.querySelector(`.activity-card[data-activity="${id}"]`);
+  const namedTrigger = document.querySelector(`[data-activity="${id}"][data-title]`);
+  dialogTitle.textContent = card ? card.querySelector('strong').textContent : namedTrigger?.dataset.title || '';
+  dialogBody.replaceChildren(template.content.cloneNode(true));
+  dialogBody.scrollTop = 0;
+  activeActivity = id;
+  if (updateHash) history.replaceState(null, '', `#${id}`);
+  if (!dialog.open) dialog.showModal();
+  document.body.classList.add('modal-open');
+  return true;
+}
 
 document.addEventListener('click', (event) => {
   const trigger = event.target.closest('[data-activity]');
-  const template = trigger && document.getElementById(`activity-${trigger.dataset.activity}`);
-  if (!dialog || !template) return;
-  const card = document.querySelector(`.activity-card[data-activity="${trigger.dataset.activity}"]`);
-  dialogTitle.textContent = card ? card.querySelector('strong').textContent : trigger.dataset.title;
-  dialogBody.replaceChildren(template.content.cloneNode(true));
-  dialogBody.scrollTop = 0;
-  if (!dialog.open) dialog.showModal();
-  document.body.classList.add('modal-open');
+  if (!trigger) return;
+  openActivity(trigger.dataset.activity, trigger.classList.contains('activity-card'));
 });
 
 dialog?.querySelector('.dialog-close').addEventListener('click', () => dialog.close());
 dialog?.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
-dialog?.addEventListener('close', () => document.body.classList.remove('modal-open'));
+dialog?.addEventListener('close', () => {
+  document.body.classList.remove('modal-open');
+  if (activeActivity && location.hash === `#${activeActivity}`) history.replaceState(null, '', '#activities');
+  activeActivity = null;
+});
+
+const pdfDialog = document.querySelector('.pdf-dialog');
+const pdfFrame = pdfDialog?.querySelector('iframe');
+const pdfTitle = pdfDialog?.querySelector('h2');
+const pdfNewTab = pdfDialog?.querySelector('.pdf-new-tab');
+const pdfOriginal = pdfDialog?.querySelector('.pdf-original');
+
+document.addEventListener('click', (event) => {
+  const trigger = event.target.closest('[data-pdf-preview]');
+  if (!trigger || !pdfDialog) return;
+  event.preventDefault();
+  pdfTitle.textContent = trigger.dataset.title;
+  pdfFrame.src = trigger.href;
+  pdfNewTab.href = trigger.href;
+  pdfOriginal.href = trigger.dataset.original;
+  pdfOriginal.setAttribute('data-umami-event', 'C seminar original download');
+  pdfOriginal.setAttribute('data-umami-event-file', trigger.dataset.umamiEventFile);
+  pdfDialog.showModal();
+});
+
+pdfDialog?.querySelector('.pdf-close').addEventListener('click', () => pdfDialog.close());
+pdfDialog?.addEventListener('click', (event) => { if (event.target === pdfDialog) pdfDialog.close(); });
+pdfDialog?.addEventListener('close', () => { pdfFrame.src = 'about:blank'; });
+
+function openActivityFromHash() {
+  const id = decodeURIComponent(location.hash.slice(1));
+  if (!id || id === 'activities' || dialog?.open) return;
+  if (openActivity(id)) document.getElementById('activities')?.scrollIntoView();
+}
+
+addEventListener('hashchange', openActivityFromHash);
+queueMicrotask(openActivityFromHash);
 
 const progress = document.querySelector('.side-track span');
 let progressQueued = false;

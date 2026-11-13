@@ -105,7 +105,7 @@
         <button class="activity-card" type="button" data-activity="swplay"><img src="assets/activities/swplay-1.jpg" alt="" loading="lazy"><span class="activity-meta">2023.07 — 2023.08 · 대학생 멘토</span><strong>2023 소프트웨어야 놀자 대학생 멘토</strong><span class="activity-summary">네이버 커넥트재단 · 초등학생 AI 언플러그드 수업</span></button>
         <button class="activity-card" type="button" data-activity="morai"><img src="assets/activities/morai-cover.jpg" alt="" loading="lazy"><span class="activity-meta">2023.01 — 2023.02 · 대회 · 수상</span><strong>혁신공유대학 가상환경 기반 자율주행 경진대회</strong><span class="activity-summary">ROS · MORAI 시뮬레이터 · 모라이상 수상</span></button>
         <button class="activity-card" type="button" data-activity="esw"><img src="assets/activities/esw-cover.jpg" alt="" loading="lazy"><span class="activity-meta">2022.07 — 2022.09 · 대회</span><strong>제20회 임베디드 소프트웨어 경진대회</strong><span class="activity-summary">YOLOv5 기반 화물차 사고 방지 앱</span></button>
-        <button class="activity-card" type="button" data-activity="cseminar"><img src="assets/activities/cseminar-cover.jpg" alt="" loading="lazy"><span class="activity-meta">2022.03 — 2022.06 · 세미나</span><strong>C언어 세미나</strong><span class="activity-summary">소학회 네트로닉스 · 신입생 32명 대상 강의</span></button>
+        <button class="activity-card" id="cseminar" type="button" data-activity="cseminar"><img src="assets/activities/cseminar-cover.jpg" alt="" loading="lazy"><span class="activity-meta">2022.03 — 2022.06 · 세미나</span><strong>C언어 세미나</strong><span class="activity-summary">소학회 네트로닉스 · 신입생 32명 대상 강의</span></button>
       </div>
     </div></section>
 
@@ -127,6 +127,14 @@
   <dialog class="activity-dialog" aria-labelledby="activity-dialog-title">
     <div class="dialog-head"><h2 id="activity-dialog-title"></h2><button class="dialog-close" type="button" aria-label="닫기">×</button></div>
     <div class="dialog-body"></div>
+  </dialog>
+
+  <dialog class="pdf-dialog" aria-labelledby="pdf-dialog-title">
+    <div class="pdf-head">
+      <h2 id="pdf-dialog-title"></h2>
+      <div class="pdf-actions"><a class="pdf-new-tab" target="_blank" rel="noreferrer">PDF 새 탭</a><a class="pdf-original" download>원본 다운로드</a><button class="dialog-close pdf-close" type="button" aria-label="닫기">×</button></div>
+    </div>
+    <div class="pdf-view"><iframe title="세미나 자료 PDF 미리보기"></iframe></div>
   </dialog>
 
   <template id="activity-award-scholarship">
@@ -242,24 +250,24 @@
       <section class="material-group" aria-labelledby="seminar-slides-title">
         <h4 id="seminar-slides-title">강의안</h4>
         <div class="material-list">
-          <a class="material-link" href="assets/netronics/1주차.pptx" download data-umami-event="C seminar material download" data-umami-event-file="week-01-slides"><span class="file-type">PPTX</span><span><strong>1주차 강의안</strong><small>1.9 MB</small></span><i aria-hidden="true">↓</i></a>
-          <a class="material-link" href="assets/netronics/2주차.pptx" download data-umami-event="C seminar material download" data-umami-event-file="week-02-slides"><span class="file-type">PPTX</span><span><strong>2주차 강의안</strong><small>2.4 MB</small></span><i aria-hidden="true">↓</i></a>
-          <a class="material-link" href="assets/netronics/4주차.pptx" download data-umami-event="C seminar material download" data-umami-event-file="week-04-slides"><span class="file-type">PPTX</span><span><strong>4주차 강의안</strong><small>1.1 MB</small></span><i aria-hidden="true">↓</i></a>
-          <a class="material-link" href="assets/netronics/5주차.pptx" download data-umami-event="C seminar material download" data-umami-event-file="week-05-slides"><span class="file-type">PPTX</span><span><strong>5주차 강의안</strong><small>420 KB</small></span><i aria-hidden="true">↓</i></a>
-          <a class="material-link" href="assets/netronics/6주차.pptx" download data-umami-event="C seminar material download" data-umami-event-file="week-06-slides"><span class="file-type">PPTX</span><span><strong>6주차 강의안</strong><small>564 KB</small></span><i aria-hidden="true">↓</i></a>
+          <a class="material-link" href="assets/netronics/pdf/week-01-slides.pdf" target="_blank" data-pdf-preview data-title="1주차 강의안" data-original="assets/netronics/1주차.pptx" data-umami-event="C seminar material preview" data-umami-event-file="week-01-slides"><span class="file-type">PPTX</span><span><strong>1주차 강의안</strong><small>PDF · 28쪽</small></span><i aria-hidden="true">보기</i></a>
+          <a class="material-link" href="assets/netronics/pdf/week-02-slides.pdf" target="_blank" data-pdf-preview data-title="2주차 강의안" data-original="assets/netronics/2주차.pptx" data-umami-event="C seminar material preview" data-umami-event-file="week-02-slides"><span class="file-type">PPTX</span><span><strong>2주차 강의안</strong><small>PDF · 45쪽</small></span><i aria-hidden="true">보기</i></a>
+          <a class="material-link" href="assets/netronics/pdf/week-04-slides.pdf" target="_blank" data-pdf-preview data-title="4주차 강의안" data-original="assets/netronics/4주차.pptx" data-umami-event="C seminar material preview" data-umami-event-file="week-04-slides"><span class="file-type">PPTX</span><span><strong>4주차 강의안</strong><small>PDF · 31쪽</small></span><i aria-hidden="true">보기</i></a>
+          <a class="material-link" href="assets/netronics/pdf/week-05-slides.pdf" target="_blank" data-pdf-preview data-title="5주차 강의안" data-original="assets/netronics/5주차.pptx" data-umami-event="C seminar material preview" data-umami-event-file="week-05-slides"><span class="file-type">PPTX</span><span><strong>5주차 강의안</strong><small>PDF · 14쪽</small></span><i aria-hidden="true">보기</i></a>
+          <a class="material-link" href="assets/netronics/pdf/week-06-slides.pdf" target="_blank" data-pdf-preview data-title="6주차 강의안" data-original="assets/netronics/6주차.pptx" data-umami-event="C seminar material preview" data-umami-event-file="week-06-slides"><span class="file-type">PPTX</span><span><strong>6주차 강의안</strong><small>PDF · 21쪽</small></span><i aria-hidden="true">보기</i></a>
         </div>
       </section>
       <section class="material-group" aria-labelledby="seminar-worksheets-title">
         <h4 id="seminar-worksheets-title">학습 활동지</h4>
         <div class="material-list">
-          <a class="material-link" href="assets/netronics/2022 네트로닉스 시스템부 1주차 test.hwp" download data-umami-event="C seminar material download" data-umami-event-file="week-01-test"><span class="file-type hwp">HWP</span><span><strong>1주차 테스트</strong><small>104 KB</small></span><i aria-hidden="true">↓</i></a>
-          <a class="material-link" href="assets/netronics/2022 네트로닉스 시스템부 2주차 test.hwp" download data-umami-event="C seminar material download" data-umami-event-file="week-02-test"><span class="file-type hwp">HWP</span><span><strong>2주차 테스트</strong><small>108 KB</small></span><i aria-hidden="true">↓</i></a>
-          <a class="material-link" href="assets/netronics/2022 네트로닉스 시스템부 4주차 test.hwp" download data-umami-event="C seminar material download" data-umami-event-file="week-04-test"><span class="file-type hwp">HWP</span><span><strong>4주차 테스트</strong><small>80 KB</small></span><i aria-hidden="true">↓</i></a>
-          <a class="material-link" href="assets/netronics/2022 네트로닉스 시스템부 4주차 test 답지.hwp" download data-umami-event="C seminar material download" data-umami-event-file="week-04-answer"><span class="file-type answer">정답</span><span><strong>4주차 답지</strong><small>44 KB</small></span><i aria-hidden="true">↓</i></a>
-          <a class="material-link" href="assets/netronics/2022 네트로닉스 시스템부 세미나 5 test.hwp" download data-umami-event="C seminar material download" data-umami-event-file="week-05-test"><span class="file-type hwp">HWP</span><span><strong>5주차 테스트</strong><small>216 KB</small></span><i aria-hidden="true">↓</i></a>
-          <a class="material-link" href="assets/netronics/2022 네트로닉스 시스템부 세미나 5 test 답지.hwp" download data-umami-event="C seminar material download" data-umami-event-file="week-05-answer"><span class="file-type answer">정답</span><span><strong>5주차 답지</strong><small>148 KB</small></span><i aria-hidden="true">↓</i></a>
-          <a class="material-link" href="assets/netronics/2022 네트로닉스 시스템부 세미나 6 test.hwp" download data-umami-event="C seminar material download" data-umami-event-file="week-06-test"><span class="file-type hwp">HWP</span><span><strong>6주차 테스트</strong><small>196 KB</small></span><i aria-hidden="true">↓</i></a>
-          <a class="material-link" href="assets/netronics/2022 네트로닉스 시스템부 세미나 6 test 답지.hwp" download data-umami-event="C seminar material download" data-umami-event-file="week-06-answer"><span class="file-type answer">정답</span><span><strong>6주차 답지</strong><small>132 KB</small></span><i aria-hidden="true">↓</i></a>
+          <a class="material-link" href="assets/netronics/pdf/week-01-test.pdf" target="_blank" data-pdf-preview data-title="1주차 테스트" data-original="assets/netronics/2022 네트로닉스 시스템부 1주차 test.hwp" data-umami-event="C seminar material preview" data-umami-event-file="week-01-test"><span class="file-type hwp">HWP</span><span><strong>1주차 테스트</strong><small>PDF · 2쪽</small></span><i aria-hidden="true">보기</i></a>
+          <a class="material-link" href="assets/netronics/pdf/week-02-test.pdf" target="_blank" data-pdf-preview data-title="2주차 테스트" data-original="assets/netronics/2022 네트로닉스 시스템부 2주차 test.hwp" data-umami-event="C seminar material preview" data-umami-event-file="week-02-test"><span class="file-type hwp">HWP</span><span><strong>2주차 테스트</strong><small>PDF · 2쪽</small></span><i aria-hidden="true">보기</i></a>
+          <a class="material-link" href="assets/netronics/pdf/week-04-test.pdf" target="_blank" data-pdf-preview data-title="4주차 테스트" data-original="assets/netronics/2022 네트로닉스 시스템부 4주차 test.hwp" data-umami-event="C seminar material preview" data-umami-event-file="week-04-test"><span class="file-type hwp">HWP</span><span><strong>4주차 테스트</strong><small>PDF · 2쪽</small></span><i aria-hidden="true">보기</i></a>
+          <a class="material-link" href="assets/netronics/pdf/week-04-answer.pdf" target="_blank" data-pdf-preview data-title="4주차 답지" data-original="assets/netronics/2022 네트로닉스 시스템부 4주차 test 답지.hwp" data-umami-event="C seminar material preview" data-umami-event-file="week-04-answer"><span class="file-type answer">정답</span><span><strong>4주차 답지</strong><small>PDF · 2쪽</small></span><i aria-hidden="true">보기</i></a>
+          <a class="material-link" href="assets/netronics/pdf/week-05-test.pdf" target="_blank" data-pdf-preview data-title="5주차 테스트" data-original="assets/netronics/2022 네트로닉스 시스템부 세미나 5 test.hwp" data-umami-event="C seminar material preview" data-umami-event-file="week-05-test"><span class="file-type hwp">HWP</span><span><strong>5주차 테스트</strong><small>PDF · 3쪽</small></span><i aria-hidden="true">보기</i></a>
+          <a class="material-link" href="assets/netronics/pdf/week-05-answer.pdf" target="_blank" data-pdf-preview data-title="5주차 답지" data-original="assets/netronics/2022 네트로닉스 시스템부 세미나 5 test 답지.hwp" data-umami-event="C seminar material preview" data-umami-event-file="week-05-answer"><span class="file-type answer">정답</span><span><strong>5주차 답지</strong><small>PDF · 3쪽</small></span><i aria-hidden="true">보기</i></a>
+          <a class="material-link" href="assets/netronics/pdf/week-06-test.pdf" target="_blank" data-pdf-preview data-title="6주차 테스트" data-original="assets/netronics/2022 네트로닉스 시스템부 세미나 6 test.hwp" data-umami-event="C seminar material preview" data-umami-event-file="week-06-test"><span class="file-type hwp">HWP</span><span><strong>6주차 테스트</strong><small>PDF · 3쪽</small></span><i aria-hidden="true">보기</i></a>
+          <a class="material-link" href="assets/netronics/pdf/week-06-answer.pdf" target="_blank" data-pdf-preview data-title="6주차 답지" data-original="assets/netronics/2022 네트로닉스 시스템부 세미나 6 test 답지.hwp" data-umami-event="C seminar material preview" data-umami-event-file="week-06-answer"><span class="file-type answer">정답</span><span><strong>6주차 답지</strong><small>PDF · 3쪽</small></span><i aria-hidden="true">보기</i></a>
         </div>
       </section>
     </div>
